@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Pactice</title>
+</head>
+<body>
+    <h1>Dom diye Event</h1>
+    <h2 id="text-changer">Default Text</h2>
+    <button onclick="handleOnclick()">Handle Event by Onclick Function</button>
+    <button id="handle-status">Handle Event By AddEventListener</button>
+    <br>
+    <br>
+    <h1 id="input-text-display">Input-Text</h1>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="document.body.style.backgroundColor = 'red' ">Make Red</button>
+    <button onclick="makeRed()">Make Green</button>
+    <button id="make-pink">Make Pink</button>
+    <button id="make-yellow">Make Yellow</button>
+
+    <script>
+        function makeRed(){
+            document.body.style.backgroundColor = 'green'
+        }
+
+        const makePinkButton = document.getElementById('make-pink');
+        makePinkButton.onclick = makePink;
+        function makePink(){
+            document.body.style.backgroundColor = 'pink'
+        }
+
+        document.getElementById('make-yellow').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'yellow'
+        })
+
+        function handleOnclick(){
+            const handleOnclick = document.getElementById('text-changer');
+            handleOnclick.innerText = 'Amar Sonar Bangla Ami Tmay Valobasi'
+        }
+
+        document.getElementById('handle-status').addEventListener('click', function(){
+            const textChanger = document.getElementById('text-changer');
+            textChanger.innerText = 'She Amare Amar Hote Dai Nah'
+        })
+
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputFiled = document.getElementById('input-field');
+            const inputText = inputFiled.value;
+             
+            const inputTextDisplay = document.getElementById('input-text-display');
+            inputTextDisplay.innerText = inputText;
+            inputFiled.value = ''
+        })
+    </script>
+</body>
+</html>

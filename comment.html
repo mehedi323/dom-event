@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+</head>
+<body>
+    <h1>Handle Comment By AddEventListener</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita excepturi illo voluptatum qui hic praesentium, alias, autem ad vitae voluptatem enim fugit velit libero aliquid dolores, sit omnis voluptate rerum blanditiis minus ducimus. Voluptatibus quis explicabo iste quia, provident totam, cum magni in porro tempora nemo obcaecati ab ea. Pariatur.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita asperiores maiores iusto, et harum dicta illum non earum voluptatem perspiciatis, impedit obcaecati perferendis ratione autem veritatis. Velit exercitationem, id corrupti ex quae perspiciatis iste quam optio vitae. Molestias obcaecati non impedit inventore maiores? Accusamus quae atque molestiae assumenda minima odio.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita asperiores maiores iusto, et harum dicta illum non earum voluptatem perspiciatis, impedit obcaecati perferendis ratione autem veritatis. Velit exercitationem, id corrupti ex quae perspiciatis iste quam optio vitae. Molestias obcaecati non impedit inventore maiores? Accusamus quae atque molestiae assumenda minima odio.</p>
+    </div>
+    <textarea name="" id="new-comment" cols="60" rows="10"></textarea>
+    <br>
+    <button id="btn-post">Post</button>
+
+    <script>
+        document.getElementById('btn-post').addEventListener('click', function(){
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p)
+            commentBox.value = ''
+
+            
+        })
+    </script>
+</body>
+</html>
